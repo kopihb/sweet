@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import SweetItem from './Sweet-item/SweetItem';
+import SweetItem from './components/Sweet-item/SweetItem';
 
 class App extends Component {
   render() {
@@ -11,9 +11,18 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
 
-          <SweetItem  name="name 1"/>
-          <SweetItem name="name 2"/>
-          <SweetItem name="name 3"/>
+          <div className="sweet-block">
+              <SweetItem name="name 1"/>
+              <SweetItem name="name 2"/>
+              <SweetItem name="name 3"/>
+              <SweetItem name="name 4"/>
+              <SweetItem name="name 5"/>
+              <SweetItem name="name 6"/>
+              <SweetItem name="name 7"/>
+              <SweetItem name="name 8"/>
+              <SweetItem name="name 9"/>
+          </div>
+
 
         </header>
       </div>
