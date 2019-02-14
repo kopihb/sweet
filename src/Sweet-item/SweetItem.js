@@ -1,7 +1,7 @@
 import React from 'react';
 
-const sweetItem =() => {
-    return <p> I am sweet</p>
+const sweetItem = (props) => {
+    return <div className="sweet"> I am sweet {props.name}</div>
 };
 
 export default sweetItem;
