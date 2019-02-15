@@ -19,15 +19,15 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-
           <div className="sweet-block">
-              {this.state.sweets.map(sweet => {
-                return  <SweetItem name={sweet.name}/>
+              {this.state.sweets.map((sweet, index) => {
+                return  <SweetItem
+                    name={sweet.name}
+                    key={index}
+                />
               })};
 
           </div>
-
-
         </header>
       </div>
     );
