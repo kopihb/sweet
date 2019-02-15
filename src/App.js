@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
 
@@ -12,7 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
 
           <div className="sweet-block">
-              <SweetItem name="name 1"/>
+              <SweetItem name="name 1" />
               <SweetItem name="name 2"/>
               <SweetItem name="name 3"/>
               <SweetItem name="name 4"/>
