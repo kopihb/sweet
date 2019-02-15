@@ -3,24 +3,28 @@ import logo from './logo.svg';
 import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
+import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
+
+    state ={
+        sweets : sweetsdata["sweets "]
+    }
+
   render() {
+        /*for check  data*/
+      console.log(sweetsdata);
     return (
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
 
           <div className="sweet-block">
-              <SweetItem name="name 1" />
-              <SweetItem name="name 2"/>
-              <SweetItem name="name 3"/>
-              <SweetItem name="name 4"/>
-              <SweetItem name="name 5"/>
-              <SweetItem name="name 6"/>
-              <SweetItem name="name 7"/>
-              <SweetItem name="name 8"/>
-              <SweetItem name="name 9"/>
+              {this.state.sweets.map(sweet => {
+                return  <SweetItem name={sweet.name}/>
+              })};
+
           </div>
 
 
