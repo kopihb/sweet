@@ -1,22 +1,20 @@
 .SweetItem {
-    width: 400px;
-    height: 300px;
-    border: solid 1px #256987;
-    box-shadow: 0 2px 3px #ccaccc;
-    margin: 25px;
-}
-
-button {
-    cursor: pointer;
-    width: 100px;
-    height: 35px;
-    background-color: green;
-}
-
-.sweet-logo {
+  width: 400px;
+  height: 300px;
+  border: solid 1px #256987;
+  box-shadow: 0 2px 3px #ccaccc;
+  margin: 25px; }
+  .SweetItem .sweet-logo {
     margin: 15px auto;
     width: 155px;
     height: 75px;
     padding: 15px;
-    border: #61dafb 1px solid;
-}
+    border: #61dafb 1px solid; }
+
+button {
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  background-color: green; }
+
+/*# sourceMappingURL=SweetItem.css.map */
