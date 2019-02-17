@@ -8,12 +8,14 @@
     justify-content: center;
   }
 
-  .nav {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  .nav-block {
+    margin: 0 auto;
     height: 50px;
-    width: 100%;
+    width: 90%;
+    display: flex;
     border: solid 1px #256987;
+    justify-content: center;
+    align-items: center;
   }
 
   .questions {
@@ -22,16 +24,18 @@
     border: solid 1px #256987;
   }
 
-
-  .contacts {
-    margin: 0 auto;
-    width: 90%;
-    border: solid 1px #256987;
-  }
   .contacts {
     display: flex;
+    margin: 0 auto;
+    width: 90%;
+   // border: solid 1px #256987;
 
-    .contacts-info,
+    .contacts-info {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 40%;
+    }
+
     .map {
       border: solid 1px #256987;
       margin: 15px;
@@ -43,14 +47,17 @@
     display: flex;
     margin: 0 auto;
     width: 90%;
-    .contacts-info,
+
     .about-us {
       border: solid 1px #256987;
       margin: 15px;
       width: 100%;
     }
-    contact-info {
+    .contacts-info {
       text-align: left;
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 40%;
    }
   }
 
