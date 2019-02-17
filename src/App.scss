@@ -16,13 +16,16 @@
     border: solid 1px #256987;
   }
 
-  .questions,
-  .about,
+  .questions {
+    margin: 0 auto;
+    width: 90%;
+    border: solid 1px #256987;
+  }
+
+
   .contacts {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 250px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     border: solid 1px #256987;
   }
   .contacts {
@@ -38,12 +41,17 @@
 
   .about {
     display: flex;
+    margin: 0 auto;
+    width: 90%;
     .contacts-info,
     .about-us {
       border: solid 1px #256987;
       margin: 15px;
       width: 100%;
     }
+    contact-info {
+      text-align: left;
+   }
   }
 
   .top-header {
