@@ -7,6 +7,7 @@ import Slider from './components/Slider/Slider';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Question from './components/Questions/Question';
+import Nav from './components/Nav/Nav';
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
@@ -25,8 +26,8 @@ class App extends Component {
           <div className="top-header">
               <img src={logo} className="App-logo" alt="logo" />
           </div>
-          <div className="nav">
-             Меню
+          <div className="nav-block">
+              <Nav />
           </div>
           <div className="about">
               <div className="about-us">

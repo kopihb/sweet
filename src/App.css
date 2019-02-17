@@ -5,23 +5,26 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; }
-  .App .nav {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  .App .nav-block {
+    margin: 0 auto;
     height: 50px;
-    width: 100%;
-    border: solid 1px #256987; }
+    width: 90%;
+    display: flex;
+    border: solid 1px #256987;
+    justify-content: center;
+    align-items: center; }
   .App .questions {
     margin: 0 auto;
     width: 90%;
     border: solid 1px #256987; }
   .App .contacts {
+    display: flex;
     margin: 0 auto;
-    width: 90%;
-    border: solid 1px #256987; }
-  .App .contacts {
-    display: flex; }
-    .App .contacts .contacts-info,
+    width: 90%; }
+    .App .contacts .contacts-info {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 40%; }
     .App .contacts .map {
       border: solid 1px #256987;
       margin: 15px;
@@ -30,13 +33,15 @@
     display: flex;
     margin: 0 auto;
     width: 90%; }
-    .App .about .contacts-info,
     .App .about .about-us {
       border: solid 1px #256987;
       margin: 15px;
       width: 100%; }
-    .App .about contact-info {
-      text-align: left; }
+    .App .about .contacts-info {
+      text-align: left;
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 40%; }
   .App .top-header {
     margin-top: 15px;
     margin-bottom: 15px;

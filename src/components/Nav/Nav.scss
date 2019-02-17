@@ -1,0 +1,14 @@
+.Nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px;
+
+  .nav-item {
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .nav-item:hover {
+    color: red;
+  }
+}
