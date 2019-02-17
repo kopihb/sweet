@@ -7,13 +7,20 @@
 
     .sweet-logo {
         margin: 15px auto;
-        width: 155px;
-        height: 75px;
-        padding: 15px;
+        //width: 155px;
+        //height: 75px;
+        //padding: 15px;
         border: #61dafb 1px solid;
+
+        img {
+            width: 150px;
+            height: 100%;
+        }
     }
     .sweet-description {
         padding: 15px ;
+        height: 55px;
+        text-align: justify;
     }
 }
 
@@ -21,6 +28,8 @@ button {
     cursor: pointer;
     width: 100px;
     height: 35px;
+    margin-top: 7px;
+    margin-bottom: 7px;
     background-color: green;
 }
 
