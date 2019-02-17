@@ -5,6 +5,8 @@ import './App.scss';
 import SweetItem from './components/Sweet-item/SweetItem';
 import Slider from './components/Slider/Slider';
 import Contact from './components/Contact/Contact';
+import About from './components/About/About';
+import Question from './components/Questions/Question';
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
@@ -28,7 +30,7 @@ class App extends Component {
           </div>
           <div className="about">
               <div className="about-us">
-                  Про нас
+                  <About />
               </div>
               <div className="contacts-info">
                   <Contact />
@@ -50,7 +52,7 @@ class App extends Component {
 
           </div>
           <div className="questions">
-                Блок запитань
+               <Question />
           </div>
           <div className="contacts">
              <div className="contacts-info">
