@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
+import Slider from './components/Slider/Slider';
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
@@ -27,6 +28,9 @@ class App extends Component {
           <div className="about">
               Про нас
           </div>
+
+          <Slider />
+
           <div className="sweet-block">
               {this.state.sweets.map((sweet, index) => {
                 return  <SweetItem
