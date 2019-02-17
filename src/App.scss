@@ -8,16 +8,44 @@
     justify-content: center;
   }
 
+  .nav {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+    width: 100%;
+    border: solid 1px #256987;
+  }
+
   .questions,
-  .contacts,
   .about,
-  .nav{
+  .contacts {
     margin-top: 15px;
     margin-bottom: 15px;
     height: 250px;
     width: 100%;
     border: solid 1px #256987;
   }
+  .contacts {
+    display: flex;
+
+    .contacts-info,
+    .map {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 100%;
+    }
+  }
+
+  .about {
+    display: flex;
+    .contacts-info,
+    .about-us {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 100%;
+    }
+  }
+
   .top-header {
     margin-top: 15px;
     margin-bottom: 15px;

@@ -5,15 +5,34 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; }
-  .App .questions,
-  .App .contacts,
-  .App .about,
   .App .nav {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+    width: 100%;
+    border: solid 1px #256987; }
+  .App .questions,
+  .App .about,
+  .App .contacts {
     margin-top: 15px;
     margin-bottom: 15px;
     height: 250px;
     width: 100%;
     border: solid 1px #256987; }
+  .App .contacts {
+    display: flex; }
+    .App .contacts .contacts-info,
+    .App .contacts .map {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 100%; }
+  .App .about {
+    display: flex; }
+    .App .about .contacts-info,
+    .App .about .about-us {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 100%; }
   .App .top-header {
     margin-top: 15px;
     margin-bottom: 15px;

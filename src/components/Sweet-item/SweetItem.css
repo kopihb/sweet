@@ -19,6 +19,8 @@ button {
   cursor: pointer;
   width: 100px;
   height: 35px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   background-color: green; }
 
 /*# sourceMappingURL=SweetItem.css.map */

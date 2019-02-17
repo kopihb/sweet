@@ -4,6 +4,7 @@ import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
 import Slider from './components/Slider/Slider';
+import Contact from './components/Contact/Contact';
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
@@ -26,7 +27,12 @@ class App extends Component {
              Меню
           </div>
           <div className="about">
-              Про нас
+              <div className="about-us">
+                  Про нас
+              </div>
+              <div className="contacts-info">
+                  <Contact />
+              </div>
           </div>
 
           <Slider />
@@ -47,7 +53,12 @@ class App extends Component {
                 Блок запитань
           </div>
           <div className="contacts">
-              Блок контакти
+             <div className="contacts-info">
+                 <Contact />
+             </div>
+             <div className="map">
+                 карта гугла
+             </div>
           </div>
 
 
