@@ -8,6 +8,7 @@ import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Question from './components/Questions/Question';
 import Nav from './components/Nav/Nav';
+
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {

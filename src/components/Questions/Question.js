@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Question.css';
+import './Question.scss';
 
 
 
