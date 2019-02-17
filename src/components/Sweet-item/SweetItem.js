@@ -5,10 +5,11 @@ import './SweetItem.css';
 const sweetItem = (props) => {
     return (
         <div className="SweetItem">
-            <div className="sweet-logo">sweet-logo </div>
+            <div className="sweet-logo"><img src={props.url} alt={props.name} /> </div>
             <div className="sweet-name"> I am sweet {props.name}</div>
-            <div className="sweet-description"> sweet-description sweet-description</div>
-            <button>Detail</button>
+            <div className="sweet-description"> {props.description}</div>
+            <div>Ціна: {props.price} грн/кг</div>
+            <button>Детальніше</button>
         </div>
     )
 };

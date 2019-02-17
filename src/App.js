@@ -9,7 +9,7 @@ class App extends Component {
 
     state ={
         sweets : sweetsdata["sweets "]
-    }
+    };
 
   render() {
         /*for check  data*/
@@ -17,18 +17,36 @@ class App extends Component {
     return (
 
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+
+          <div className="top-header">
+              <img src={logo} className="App-logo" alt="logo" />
+          </div>
+          <div className="nav">
+             Меню
+          </div>
+          <div className="about">
+              Про нас
+          </div>
           <div className="sweet-block">
               {this.state.sweets.map((sweet, index) => {
                 return  <SweetItem
                     name={sweet.name}
+                    url={sweet.url}
+                    description={sweet.description}
+                    price={sweet.price}
                     key={index}
                 />
-              })};
+              })}
 
           </div>
-        </header>
+          <div className="questions">
+                Блок запитань
+          </div>
+          <div className="contacts">
+              Блок контакти
+          </div>
+
+
       </div>
     );
   }

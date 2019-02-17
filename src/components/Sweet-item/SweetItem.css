@@ -6,12 +6,14 @@
   margin: 25px; }
   .SweetItem .sweet-logo {
     margin: 15px auto;
-    width: 155px;
-    height: 75px;
-    padding: 15px;
     border: #61dafb 1px solid; }
+    .SweetItem .sweet-logo img {
+      width: 150px;
+      height: 100%; }
   .SweetItem .sweet-description {
-    padding: 15px; }
+    padding: 15px;
+    height: 55px;
+    text-align: justify; }
 
 button {
   cursor: pointer;
