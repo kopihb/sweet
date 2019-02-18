@@ -1,4 +1,6 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 import './Nav.scss';
 
@@ -15,6 +17,14 @@ const nav = () => {
             <div className="nav-item">Календар замовлення</div>
             <div className="nav-item">Питання</div>
             <div className="nav-item">Контакти</div>
+            <Link
+                to="/pathLink#yourAnchorTag"
+            > Your link text </Link>
+            <NavLink
+                to="/some/path#with-hash-fragment"
+                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end' })}
+                // etc...
+            >Link to Hash Fragment</NavLink>
 
         </div>
     )
