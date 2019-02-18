@@ -64,6 +64,8 @@ class App extends Component {
                  карта гугла
              </div>
           </div>
+          <div id="yourAnchorTag">test only lin  Anchor</div>
+          <div id="with-hash-fragment">test Nav lin  Anchor</div>
 
 
       </div>
