@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 
-import './Slider.css';
+import './Slider.scss';
 
 const slideImages = [
     'http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/s2-2-e1523558182454.jpg',
@@ -15,7 +15,7 @@ const properties = {
     infinite: true,
     indicators: true,
     arrows: true
-}
+};
 
 const Slider = () => {
     return (
