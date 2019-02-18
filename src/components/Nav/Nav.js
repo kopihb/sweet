@@ -19,12 +19,12 @@ const nav = () => {
             <div className="nav-item">Контакти</div>
             <Link
                 to="/pathLink#yourAnchorTag"
-            > Your link text </Link>
+            >   <div className="nav-item">Your link text</div> </Link>
             <NavLink
                 to="/some/path#with-hash-fragment"
-                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end' })}
+                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end', behavior: 'smooth' })}
                 // etc...
-            >Link to Hash Fragment</NavLink>
+            >  <div className="nav-item">Link to Hash Fragment</div></NavLink>
 
         </div>
     )
