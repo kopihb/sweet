@@ -30,7 +30,7 @@ class App extends Component {
           <div className="nav-block">
               <Nav />
           </div>
-          <div className="about">
+          <div className="about" id="about">
               <div className="about-us">
                   <About />
               </div>
@@ -41,7 +41,7 @@ class App extends Component {
 
           <Slider />
 
-          <div className="sweet-block">
+          <div className="sweet-block" id="sweet">
               {this.state.sweets.map((sweet, index) => {
                 return  <SweetItem
                     name={sweet.name}
@@ -53,10 +53,10 @@ class App extends Component {
               })}
 
           </div>
-          <div className="questions">
+          <div className="questions" id="questions">
                <Question />
           </div>
-          <div className="contacts">
+          <div className="contacts" id="contacts">
              <div className="contacts-info">
                  <Contact />
              </div>
@@ -64,9 +64,6 @@ class App extends Component {
                  карта гугла
              </div>
           </div>
-          <div id="yourAnchorTag">test only lin  Anchor</div>
-          <div id="with-hash-fragment">test Nav lin  Anchor</div>
-
 
       </div>
     );
