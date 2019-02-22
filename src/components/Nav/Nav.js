@@ -10,21 +10,37 @@ const nav = () => {
     return (
         <div className="Nav">
             <div className="nav-item"> Головна</div>
-            <div className="nav-item">Про нас</div>
-            <div className="nav-item">Начинки</div>
+
+            <NavLink
+                to="/some/path#about"
+                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end', behavior: 'smooth' })}
+                // etc...
+            >   <div className="nav-item">Про нас</div></NavLink>
+
+            <NavLink
+                to="/some/path#sweet"
+                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end', behavior: 'smooth' })}
+                // etc...
+            >   <div className="nav-item">Начинки</div></NavLink>
+
             <div className="nav-item">Кенді-бар</div>
             <div className="nav-item">Путівник</div>
             <div className="nav-item">Календар замовлення</div>
-            <div className="nav-item">Питання</div>
-            <div className="nav-item">Контакти</div>
-            <Link
-                to="/pathLink#yourAnchorTag"
-            >   <div className="nav-item">Your link text</div> </Link>
+
             <NavLink
-                to="/some/path#with-hash-fragment"
+                to="/some/path#questions"
                 scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end', behavior: 'smooth' })}
                 // etc...
-            >  <div className="nav-item">Link to Hash Fragment</div></NavLink>
+            >   <div className="nav-item">Питання</div></NavLink>
+
+            <NavLink
+                to="/some/path#contacts"
+                scroll={el => el.scrollIntoView({ smooth: 'instant', block: 'end', behavior: 'smooth' })}
+                // etc...
+            >   <div className="nav-item">Контакти</div></NavLink>
+
+
+
 
         </div>
     )
