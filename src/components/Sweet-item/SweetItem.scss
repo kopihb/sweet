@@ -1,114 +1,80 @@
 .SweetItem {
-    width: 350px;
-    height: 500px;
-    border: solid 1px #256987;
-    box-shadow: 0 2px 3px #cccccc;
-    margin: 25px;
-    border-radius: 10px;
-    position: relative;
+  width: 350px;
+  height: 500px;
+  border: solid 2px #256987;
+  box-shadow: 0 2px 3px #cccccc;
+  margin: 25px;
+  border-radius: 10px;
+  position: relative;
 
-    .sweet-logo {
-        img {
-            width: 350px;
-            height: 100%;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            max-height: 300px;
-        }
+  .sweet-logo {
+    img {
+      width: 351px;
+      height: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      max-height: 300px;
     }
+  }
 
-    .sweet-name {
-        h3 {
-            color: #6ec1e4;
-        }
+  .sweet-name {
+    h3 {
+      color: #6ec1e4;
     }
+  }
 
-    .sweet-description {
-        padding-left: 15px;
-        padding-right: 15px;
-        min-height: 55px;
-        height: 100%;
-        max-height: max-content;
-        text-align: justify;
-        display: flex;
-        justify-content: center;
-        color: #7a7a7a;
-        font-family: Roboto-Medium , sans-serif;
-        font-weight: 400;
-    }
+  .sweet-description {
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 55px;
+    height: 100%;
+    max-height: max-content;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    color: #7a7a7a;
+    font-family: Roboto-Medium, sans-serif;
+    font-weight: 400;
+  }
 
-    .line-clamp {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        width: 250px;
-        -webkit-box-orient: vertical;
-    }
+  .line-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    width: 250px;
+    -webkit-box-orient: vertical;
+  }
 
 }
 
 .button-detail {
-    // first method //
-
-
-    //cursor: pointer;
-    //width: 100px;
-    //height: 35px;
-    //border-radius: 50px;
-    //color: #ffff;
-    //background-color: #6ec1e4;
-    //position: absolute;
-    //bottom: 0;
-    //left: 0;
-    //right: 0;
-    //margin: auto;
-    //margin-bottom: 7px;
-    //border: none;
-
-
-    ////// second method /////
-
-
-    cursor: pointer;
-    width: 100px;
-    height: 35px;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 8px;
-    color: #ffff;
-    background-color: #6ec1e4;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 8px;
+  color: #ffff;
+  background-color: #6ec1e4;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  margin: auto;
+  border: none;
+  border-bottom: solid 1px #256987;
+  outline: none;
 }
 
-
 .sweet-price {
-    // first method //
+  padding-top: 10px;
+  color: #6ec1e4;
+  font-size: 16px;
+  font-family: Roboto, serif;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 50px;
+  margin: auto;
+  font-weight: 800;
+  text-decoration: underline;
 
-    //padding-top: 10px;
-    //color: #6ec1e4;
-    //font-size: 16px;
-    //font-family: Roboto;
-    //position: absolute;
-    //bottom: 45px;
-    //left: 0;
-    //right: 0;
-    //margin: auto;
-    //font-weight: 800;
-
-
-    ////// second method /////
-
-    padding-top: 10px;
-    color: #6ec1e4;
-    font-size: 16px;
-    font-family: Roboto, serif;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 50px;
-    margin: auto;
-    font-weight: 800;
 }

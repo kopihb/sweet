@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
@@ -24,12 +23,10 @@ class App extends Component {
 
       <div className="App">
 
-          <div className="top-header">
-              <img src={logo} className="App-logo" alt="logo" />
-          </div>
           <div className="nav-block">
               <Nav />
           </div>
+          <Slider />
           <div className="about" id="about">
               <div className="about-us">
                   <About />
@@ -38,8 +35,6 @@ class App extends Component {
                   <Contact />
               </div>
           </div>
-
-          <Slider />
 
           <div className="sweet-block" id="sweet">
               {this.state.sweets.map((sweet, index) => {
