@@ -53,8 +53,8 @@ class App extends Component {
           </div>
           <div className="contacts" id="contacts">
              <div className="contacts-info">
-                 <Contact />
-             </div>
+              <Contact />
+          </div>
              <div className="map">
                  карта гугла
              </div>
