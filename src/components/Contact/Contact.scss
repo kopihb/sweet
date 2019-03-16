@@ -3,12 +3,27 @@
   padding: 10px 25px 10px 25px;
   display: block;
   color: #7a7a7a;
-  font-family: Roboto-Medium , sans-serif;
+  font-family: Roboto-Medium, sans-serif;
   font-weight: 400;
-}
-.col-contacts {
 
 }
+
+.contacts-infos {
+  width: 100%;
+  margin-right: 5px;
+  .Contact {
+    display: flex;
+
+    padding: 0;
+    justify-content: space-around;
+    border: solid 3px #6ec1e4;
+    margin: 0;
+
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+}
+
 @media screen and (max-width: 870px) {
   .Contact {
     display: flex;

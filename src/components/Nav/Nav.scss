@@ -6,14 +6,17 @@
   position: fixed;
   background-color: #ededed;
   width: 100%;
-
+  z-index: 5;
   .nav-item {
     margin: 5px;
     cursor: pointer;
+    color: #256987;
+    font-family: "Times New Roman", serif;
   }
 
   .nav-item:hover {
-    color: red;
+    font-weight: bold;
+    color: #6ec1e4;
   }
 
   Link {
@@ -38,6 +41,14 @@
     width: 100%;
     .top-menu {
       display: none;
+    }
+
+    .nav-item {
+      margin: 5px;
+      cursor: pointer;
+      color: #256987;
+      font-family: "Times New Roman", serif;
+      font-size: 20px;
     }
   }
   .logo {
