@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 import './Nav.scss';
@@ -8,7 +7,23 @@ import './Nav.scss';
 
 const nav = () => {
     return (
-        <div className="Nav">
+
+        <div className="Nav"  >
+            {/*<nav role="navigation">*/}
+            {/*<div id="menuToggle" >*/}
+                {/*<input type="checkbox" />*/}
+                {/*<span></span>*/}
+                {/*<span></span>*/}
+                {/*<span></span>*/}
+                {/*<ul id="menu">*/}
+                    {/*<a href="#"><li>Home</li></a>*/}
+                    {/*<a href="#"><li>About</li></a>*/}
+                    {/*<a href="#"><li>Info</li></a>*/}
+                    {/*<a href="#"><li>Contact</li></a>*/}
+                    {/*<a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>*/}
+                {/*</ul>*/}
+            {/*</div>*/}
+        {/*</nav>*/}
             <div className="nav-item"> Головна</div>
 
             <NavLink
