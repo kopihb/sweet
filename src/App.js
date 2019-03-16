@@ -52,7 +52,7 @@ class App extends Component {
                <Question />
           </div>
           <div className="contacts" id="contacts">
-             <div className="contacts-info">
+             <div className="contacts-infos">
               <Contact />
           </div>
              <div className="map">

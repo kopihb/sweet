@@ -1,6 +1,8 @@
 .App {
   text-align: center;
 background-color: #ededed;
+  flex-basis: 100%;
+  width: 100%;
   .sweet-block {
     display: flex;
     flex-direction: row;
@@ -50,9 +52,10 @@ background-color: #ededed;
 
     .about-us {
       border: solid 3px #6ec1e4;
-      margin: 15px;
       border-radius: 5px;
       width: 100%;
+      margin-right: 15px;
+      margin-top: 15px;
     }
   }
   .contacts-info {
