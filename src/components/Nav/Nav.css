@@ -1,0 +1,13 @@
+.Nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 18px; }
+  .Nav .nav-item {
+    margin: 5px;
+    cursor: pointer; }
+  .Nav .nav-item:hover {
+    color: red; }
+  .Nav Link {
+    color: #256987; }
+
+/*# sourceMappingURL=Nav.css.map */
