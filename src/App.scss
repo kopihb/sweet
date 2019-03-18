@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-
+background-color: #ededed;
+  flex-basis: 100%;
+  width: 100%;
   .sweet-block {
     display: flex;
     flex-direction: row;
@@ -9,33 +11,33 @@
   }
 
   .nav-block {
+    position: fixed;
+    background-color: #ededed;
     margin: 0 auto;
     height: 50px;
-    width: 90%;
+    width: 100%;
     display: flex;
-    border: solid 1px #256987;
+    border-bottom: solid 2px #256987;
     justify-content: center;
     align-items: center;
+    z-index: 2;
   }
 
   .questions {
     margin: 0 auto;
     width: 90%;
-    border: solid 1px #256987;
+    height: max-content;
+    background: #cccccc url(http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/questioms.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    border: solid 3px #6ec1e4;
+    border-radius: 5px;
   }
 
   .contacts {
     display: flex;
     margin: 0 auto;
     width: 90%;
-   // border: solid 1px #256987;
-
-    .contacts-info {
-      border: solid 1px #256987;
-      margin: 15px;
-      width: 40%;
-    }
-
     .map {
       border: solid 1px #256987;
       margin: 15px;
@@ -49,18 +51,20 @@
     width: 90%;
 
     .about-us {
-      border: solid 1px #256987;
-      margin: 15px;
+      border: solid 3px #6ec1e4;
+      border-radius: 5px;
       width: 100%;
+      margin-right: 15px;
+      margin-top: 15px;
     }
-    .contacts-info {
-      text-align: left;
-      border: solid 1px #256987;
-      margin: 15px;
-      width: 40%;
-   }
   }
-
+  .contacts-info {
+    text-align: left;
+    border: solid 3px #6ec1e4;
+    margin: 15px;
+    width: 40%;
+    border-radius: 5px;
+  }
   .top-header {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -68,22 +72,45 @@
     width: 100%;
     border: solid 1px #256987;
   }
+  @media screen and (max-width: 870px) {
+    .about {
+      display: flex;
+      margin: 0 auto;
+      width: 90%;
+      flex-wrap: wrap;
+      .about-us {
+        border: solid 3px #6ec1e4;
+        border-radius: 5px;
+        margin: 0;
+        margin-top: 15px;
+        width: 100%;
+      }
 
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+      .map {
+        border: solid 1px #256987;
+        margin: 0;
+        width: 100%;
+      }
+    }
   }
-  to {
-    transform: rotate(360deg);
+  .contacts-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: solid 3px #6ec1e4;
+    margin: 0;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+  .contacts {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    flex-wrap: wrap;
+    .map {
+      border: solid 1px #256987;
+      margin: 15px;
+      width: 100%;
+    }
   }
 }
-
-

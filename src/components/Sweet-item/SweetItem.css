@@ -1,13 +1,13 @@
 .SweetItem {
   width: 350px;
   height: 500px;
-  border: solid 1px #256987;
+  border: solid 2px #256987;
   box-shadow: 0 2px 3px #cccccc;
   margin: 25px;
   border-radius: 10px;
   position: relative; }
   .SweetItem .sweet-logo img {
-    width: 350px;
+    width: 351px;
     height: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -24,7 +24,7 @@
     display: flex;
     justify-content: center;
     color: #7a7a7a;
-    font-family: Roboto-Medium , sans-serif;
+    font-family: Roboto-Medium, sans-serif;
     font-weight: 400; }
   .SweetItem .line-clamp {
     overflow: hidden;
@@ -42,10 +42,12 @@
   color: #ffff;
   background-color: #6ec1e4;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -1px;
+  right: -1px;
   margin: auto;
-  border: none; }
+  border: none;
+  border-bottom: solid 1px #256987;
+  outline: none; }
 
 .sweet-price {
   padding-top: 10px;
@@ -57,6 +59,7 @@
   left: 0;
   right: 50px;
   margin: auto;
-  font-weight: 800; }
+  font-weight: 800;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=SweetItem.css.map */
