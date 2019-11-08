@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './App.scss';
 
 import SweetItem from './components/Sweet-item/SweetItem';
@@ -11,6 +11,7 @@ import Nav from './components/Nav/Nav';
 import { sweetsdata } from './data/Data.js';
 
 class App extends Component {
+
 
     state ={
         sweets : sweetsdata["sweets "]
