@@ -22,7 +22,7 @@ const sweetItem = (props) => {
                 <i>Ціна: </i>
                 {props.price} грн/кг
             </div>
-            <button className="button-detail">Детальніше</button>
+            <button className="button-detail" onClick={props.clicked}>Детальніше</button>
         </div>
 
     )
