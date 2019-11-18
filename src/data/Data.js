@@ -7,32 +7,32 @@ export const sweetsdata = {
                 price: '450',
                 id: 1
             },
-            {
-                name: 'Шоколадний торт',
-                url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/10/chokoladnuj.jpg',
-                description: 'Насичені шоколадні коржі, шоколадний крем на основі маскарпоне, смородиновий конфітюр, покрито усе шоколадним ганашем на бельгійському шоколаді. Шоко-смородина з шоко кремом (сирний крем).',
-                price: '470',
-                id: 2
-            },
-        {
-            name: 'Шоколад-маракуя',
-            url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/10/choko4.jpg',
-            description: 'Шоколадний бісквіт, крем на молочному шоколаді, і кисленький центр з маракуї. ',
-            price: '480',
-            id: 3
-        },{
-            name: 'Медовий торт',
-            url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/medovik.jpg',
-            description: '12 тоненьких ароматно-медових коржів та ніжно сметанковий крем грецький горіх. ',
-            price: '430',
-            id: 4
-        },{
-            name: 'Естархазі',
-            url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/esterxazi.jpg',
-            description: '(безе,горіхи, заварний крем).',
-            price: '420',
-            id: 5
-        },
+            // {
+            //     name: 'Шоколадний торт',
+            //     url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/10/chokoladnuj.jpg',
+            //     description: 'Насичені шоколадні коржі, шоколадний крем на основі маскарпоне, смородиновий конфітюр, покрито усе шоколадним ганашем на бельгійському шоколаді. Шоко-смородина з шоко кремом (сирний крем).',
+            //     price: '470',
+            //     id: 2
+            // },
+        // {
+        //     name: 'Шоколад-маракуя',
+        //     url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/10/choko4.jpg',
+        //     description: 'Шоколадний бісквіт, крем на молочному шоколаді, і кисленький центр з маракуї. ',
+        //     price: '480',
+        //     id: 3
+        // },{
+        //     name: 'Медовий торт',
+        //     url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/medovik.jpg',
+        //     description: '12 тоненьких ароматно-медових коржів та ніжно сметанковий крем грецький горіх. ',
+        //     price: '430',
+        //     id: 4
+        // },{
+        //     name: 'Естархазі',
+        //     url: 'http://www.sweetstudio.com.ua/wp-content/uploads/2018/03/esterxazi.jpg',
+        //     description: '(безе,горіхи, заварний крем).',
+        //     price: '420',
+        //     id: 5
+        // },
 
         // {
         //     name: 'Малиново-Фісташковий',

@@ -8,6 +8,7 @@ import About from './components/About/About';
 import Question from './components/Questions/Question';
 import Nav from './components/Nav/Nav';
 import Item from './components/Item/Item'
+import CreateItem from './components/CreateItem/CreateItem';
 
 import { sweetsdata } from './data/Data.js';
 
@@ -22,18 +23,21 @@ class App extends Component {
     };
 
     componentDidMount () {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get('/posts')
             .then(response => {
-              const posts = response.data.slice(0, 7)
+              const posts = response.data.slice(0, 2)
               const updatedPosts = posts.map(post => {
                  return {
                      ...post,
                      price: 777
                  }
               })
-              this.setState({posts: updatedPosts})
-                console.log(this.state.posts)
+              this.setState({posts: updatedPosts});
+               // console.log(this.state.posts)
             })
+        .catch( error => {
+            console.log(error)
+        })
 
     }
 
@@ -51,6 +55,7 @@ class App extends Component {
                 // description={sweet.description}
                 price={post.price}
                 key={post.id}
+                clicked={()=> this.itemSelectedHandler(post.id)}
             />
           });
       const sweets = this.state.sweets.map((sweet, index) => {
@@ -84,9 +89,7 @@ class App extends Component {
           <div className="sweet-block" id="sweet">
               {sweets}
           </div>
-          <div className="sweet-block" id="sweet">
-              {/*{posts}*/}
-          </div>
+
           {/*<div className="questions" id="questions">*/}
                {/*<Question />*/}
           {/*</div>*/}
@@ -99,10 +102,17 @@ class App extends Component {
              {/*</div>*/}
           {/*</div>*/}
 
+
+          <div className="sweet-block" id="sweet">
+              {posts}
+          </div>
+
+          <div >
+            <CreateItem />
+          </div>
           <div>
               <Item id={this.state.sweetItemSelected} />
           </div>
-
       </div>
     );
   }

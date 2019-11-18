@@ -1,14 +1,48 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 import './Item.scss';
 import TextClamp from "react-text-clamp";
 
 class Item extends Component {
+
+    state = {
+        loadedItem: null
+    }
+
+   componentDidUpdate () {
+
+           if (this.props.id) {
+               if (!this.state.loadedItem ||  (this.state.loadedItem && this.state.loadedItem.id) !== this.props.id) {
+                   axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
+                       .then(response => {
+                           console.log(response);
+                           this.setState({
+                               loadedItem: response.data
+                           })
+                       })
+               }
+           }
+
+
+   };
+
+    onDeleteItemHandler = (id) => {
+        axios.delete('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
+            .then(response => {
+                console.log('видаляємо item  id - ' + id);
+                console.log(response);
+            })
+
+    }
+
     render () {
 
         let item = <div> No item selected </div>
-
-        if (this.props.id) {
+        if (this.props) {
+            item = <p> Loading ...</p>
+        }
+        if (this.state.loadedItem) {
             item = (
                 <div className="SweetItem">
                     <div className="sweet-logo">
@@ -31,7 +65,7 @@ class Item extends Component {
                         <i>ID: </i>
                         {this.props.id} грн/кг
                     </div>
-
+                    <div className="sweet-delete" onClick={() => this.onDeleteItemHandler(this.props.id)}>Delete</div>
                 </div>
             );
         }
