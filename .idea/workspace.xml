@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61f6b543-8ef6-4cd0-960e-46c44d08a8ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CreateItem/CreateItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CreateItem/CreateItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Item/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Item/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Item/Item.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Item/Item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,13 +41,13 @@
         <counts>
           <entry key="js" value="2774" />
           <entry key="scss" value="134" />
-          <entry key="txt" value="32" />
+          <entry key="txt" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="2774" />
-          <entry key="PLAIN_TEXT" value="32" />
+          <entry key="PLAIN_TEXT" value="73" />
           <entry key="SCSS" value="134" />
         </counts>
       </usages-collector>
@@ -119,8 +112,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Item/Item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1026">
-              <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="418">
+              <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -373,17 +366,23 @@
       <option name="project" value="LOCAL" />
       <updated>1573811898825</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add  axios + item  create/get/delete">
+      <created>1574077939037</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574077939037</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47556000" />
+    <option name="totallyTimeSpent" value="48799000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="39" y="25" width="1881" height="1055" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15763813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15662003" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,7 +394,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.33457595" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.16324325" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.16324325" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -412,7 +411,8 @@
     <MESSAGE value="done some style changes" />
     <MESSAGE value="more functionality" />
     <MESSAGE value="add  axios + item" />
-    <option name="LAST_COMMIT_MESSAGE" value="add  axios + item" />
+    <MESSAGE value="add  axios + item  create/get/delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="add  axios + item  create/get/delete" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/components/Questions/Question.js">
@@ -696,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Item/Item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="418">
+          <caret line="34" column="14" lean-forward="true" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
