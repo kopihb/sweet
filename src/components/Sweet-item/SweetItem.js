@@ -1,10 +1,13 @@
 import React from 'react';
 import TextClamp from 'react-text-clamp';
+import { withRouter } from 'react-router-dom';
 
 import './SweetItem.css';
 
 const sweetItem = (props) => {
+    //console.log(this.props)
     return (
+
         <div className="SweetItem">
             <div className="sweet-logo">
                 <img src={props.url} alt={props.name}/>
@@ -28,4 +31,4 @@ const sweetItem = (props) => {
     )
 };
 
-export default sweetItem;
+export default withRouter(sweetItem);

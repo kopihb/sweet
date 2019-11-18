@@ -1,18 +1,19 @@
 import React, { Component, useState } from 'react';
-import { Route } from 'react-router-dom';
 
 import './Main.scss';
+import { Link } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
-import Slider from './../../components/Slider/Slider';
-import Contact from './../../components/Contact/Contact';
-import About from './../../components/About/About';
-import Admin  from '../Admin/Admin';
-
-import Question from './../../components/Questions/Question';
-import Nav from './../../components/Nav/Nav';
 import Item from './../../components/Item/Item'
-import CreateItem from './../../components/CreateItem/CreateItem';
+// import Slider from './../../components/Slider/Slider';
+// import Contact from './../../components/Contact/Contact';
+// import About from './../../components/About/About';
+// import Admin  from '../Admin/Admin';
+//
+// import Question from './../../components/Questions/Question';
+// import Nav from './../../components/Nav/Nav';
+//
+// import CreateItem from './../../components/CreateItem/CreateItem';
 
 import { sweetsdata } from './../../data/Data.js';
 
@@ -26,24 +27,25 @@ class Main extends Component {
         posts:  []
     };
 
-    componentDidMount () {
-        axios.get('/posts')
-            .then(response => {
-              const posts = response.data.slice(0, 2)
-              const updatedPosts = posts.map(post => {
-                 return {
-                     ...post,
-                     price: 777
-                 }
-              })
-              this.setState({posts: updatedPosts});
-               // console.log(this.state.posts)
-            })
-        .catch( error => {
-            console.log(error)
-        })
-
-    }
+    // componentDidMount () {
+    //     console.log('my main' + this.props)
+    //     axios.get('/posts')
+    //         .then(response => {
+    //           const posts = response.data.slice(0, 2)
+    //           const updatedPosts = posts.map(post => {
+    //              return {
+    //                  ...post,
+    //                  price: 777
+    //              }
+    //           })
+    //           this.setState({posts: updatedPosts});
+    //            // console.log(this.state.posts)
+    //         })
+    //     .catch( error => {
+    //         console.log(error)
+    //     })
+    //
+    // }
 
     itemSelectedHandler = (id) => {
         console.log(id);
@@ -51,26 +53,28 @@ class Main extends Component {
     }
 
   render() {
-
-      const posts = this.state.posts.map(post => {
-            return <SweetItem
-                name={post.title}
-                // url={sweet.url}
-                // description={sweet.description}
-                price={post.price}
-                key={post.id}
-                clicked={()=> this.itemSelectedHandler(post.id)}
-            />
-          });
+      //console.log('my item' + this.props)
+      // const posts = this.state.posts.map(post => {
+      //       return <SweetItem
+      //           name={post.title}
+      //           // url={sweet.url}
+      //           // description={sweet.description}
+      //           price={post.price}
+      //           key={post.id}
+      //           clicked={()=> this.itemSelectedHandler(post.id)}
+      //       />
+      //     });
       const sweets = this.state.sweets.map((sweet, index) => {
-          return <SweetItem
+          return <Link to={'/' +sweet.id}  key={index}>
+              <SweetItem
               name={sweet.name}
               url={sweet.url}
               description={sweet.description}
               price={sweet.price}
-              key={index}
+              //key={index}
               clicked={()=> this.itemSelectedHandler(sweet.id)}
           />
+          </Link>
       });
 
     return (
@@ -78,33 +82,20 @@ class Main extends Component {
       <div className="Main">
 
 
-          <div className="nav-block">
-             <header>
-                 <nav>
-                     <ul>
-                         <li>
-                             <a href='/'>Home</a>
-                         </li>
-                         <li>
-                             <a href='/admin'>Admin</a>
-                         </li>
-                     </ul>
-                 </nav>
-             </header>
-          </div>
+
 
           {/*<div className="nav-block">*/}
               {/*<Nav />*/}
           {/*</div>*/}
-          <Slider />
-          <div className="about" id="about">
-              <div className="about-us">
-                  <About />
-              </div>
-              <div className="contacts-info">
-                  <Contact />
-              </div>
-          </div>
+          {/*<Slider />*/}
+          {/*<div className="about" id="about">*/}
+              {/*<div className="about-us">*/}
+                  {/*<About />*/}
+              {/*</div>*/}
+              {/*<div className="contacts-info">*/}
+                  {/*<Contact />*/}
+              {/*</div>*/}
+          {/*</div>*/}
 
           <div className="sweet-block" id="sweet">
               {sweets}
@@ -123,19 +114,17 @@ class Main extends Component {
           {/*</div>*/}
 
 
-          <div className="sweet-block" id="sweet">
-              {posts}
-          </div>
+          {/*<div className="sweet-block" id="sweet">*/}
+              {/*{posts}*/}
+          {/*</div>*/}
 
-          <div >
-            <CreateItem />
-          </div>
+          {/*<div >*/}
+            {/*<CreateItem />*/}
+          {/*</div>*/}
           <div>
               <Item id={this.state.sweetItemSelected} />
           </div>
 
-          <Route path="/" exact render ={()=> <h1>Home</h1>} />
-          <Route path="/admin"  component ={Admin} />
 
       </div>
     );

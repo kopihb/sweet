@@ -1,3 +1,19 @@
 .Admin {
 
+  .container {
+    display: flex;
+    flex-direction: row;
+    //justify-content: space-between;
+
+    .menu-block {
+      width: 240px;
+      border: solid 1px red;
+    }
+
+    .item-block {
+      margin-left: 25px;
+    }
+  }
+
+
 }
