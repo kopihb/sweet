@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './Main.scss';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Link } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
 import Item from './../../components/Item/Item'
@@ -52,8 +52,8 @@ class Main extends Component {
         console.log(id);
       //  console.log('main state' +this.state)
       //  console.log('main props' +this.props)
-         this.setState({ sweetItemSelected: id });
-         console.log(this.state);
+      //    this.setState({ sweetItemSelected: id });
+      //    console.log(this.state);
        // console.log('main props' +this.props)
         this.props.history.push( '/items/' + id );
     }
@@ -62,6 +62,7 @@ class Main extends Component {
       console.log(this.state)
       const sweets = this.state.sweets.map((sweet) => {
           return (
+
               <SweetItem
               name={sweet.name}
               url={sweet.url}
@@ -70,7 +71,6 @@ class Main extends Component {
               key={sweet.id}
               clicked={()=> this.itemSelectedHandler(sweet.id)}
           />)
-
       });
 
     return (
