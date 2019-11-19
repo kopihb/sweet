@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import './SweetItem.css';
 
 const sweetItem = (props) => {
-    //console.log(this.props)
+    console.log('sweet props' + props)
     return (
 
         <div className="SweetItem">
@@ -31,4 +31,4 @@ const sweetItem = (props) => {
     )
 };
 
-export default withRouter(sweetItem);
+export default sweetItem;

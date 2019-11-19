@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-
+import { withRouter } from 'react-router-dom';
 
 import './Item.scss';
 import TextClamp from "react-text-clamp";
@@ -38,7 +38,7 @@ class Item extends Component {
     }
 
     render () {
-
+        console.log('my item render' + this.props)
         let item = <div> No item selected </div>
         if (this.props) {
             item = <p> Loading ...</p>

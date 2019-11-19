@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 
 import './Main.scss';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
 import Item from './../../components/Item/Item'
@@ -49,32 +49,27 @@ class Main extends Component {
 
     itemSelectedHandler = (id) => {
         console.log(id);
+      //  console.log('main state' +this.state)
+      //  console.log('main props' +this.props)
         this.setState({ sweetItemSelected: id })
+        //console.log('main state' +this.state)
+       // console.log('main props' +this.props)
+        //this.props.history.push( '/' + id );
     }
 
   render() {
-      //console.log('my item' + this.props)
-      // const posts = this.state.posts.map(post => {
-      //       return <SweetItem
-      //           name={post.title}
-      //           // url={sweet.url}
-      //           // description={sweet.description}
-      //           price={post.price}
-      //           key={post.id}
-      //           clicked={()=> this.itemSelectedHandler(post.id)}
-      //       />
-      //     });
-      const sweets = this.state.sweets.map((sweet, index) => {
-          return <Link to={'/' +sweet.id}  key={index}>
+
+      const sweets = this.state.sweets.map((sweet) => {
+          return (
               <SweetItem
               name={sweet.name}
               url={sweet.url}
               description={sweet.description}
               price={sweet.price}
-              //key={index}
+              key={sweet.id}
               clicked={()=> this.itemSelectedHandler(sweet.id)}
-          />
-          </Link>
+          />)
+
       });
 
     return (
@@ -83,49 +78,15 @@ class Main extends Component {
 
 
 
-
-          {/*<div className="nav-block">*/}
-              {/*<Nav />*/}
-          {/*</div>*/}
-          {/*<Slider />*/}
-          {/*<div className="about" id="about">*/}
-              {/*<div className="about-us">*/}
-                  {/*<About />*/}
-              {/*</div>*/}
-              {/*<div className="contacts-info">*/}
-                  {/*<Contact />*/}
-              {/*</div>*/}
-          {/*</div>*/}
-
           <div className="sweet-block" id="sweet">
               {sweets}
           </div>
 
-          {/*<div className="questions" id="questions">*/}
-               {/*<Question />*/}
-          {/*</div>*/}
-          {/*<div className="contacts" id="contacts">*/}
-             {/*<div className="contacts-infos">*/}
-              {/*<Contact />*/}
-          {/*</div>*/}
-             {/*<div className="map">*/}
-                 {/*карта гугла*/}
-             {/*</div>*/}
-          {/*</div>*/}
-
-
-          {/*<div className="sweet-block" id="sweet">*/}
-              {/*{posts}*/}
-          {/*</div>*/}
-
-          {/*<div >*/}
-            {/*<CreateItem />*/}
-          {/*</div>*/}
           <div>
-              <Item id={this.state.sweetItemSelected} />
+              {/*<Item id={this.state.sweetItemSelected} />*/}
           </div>
-
-
+          <Route path="/:id" exact component={Item} />
+         {/*// <Route path={this.state.match.url + '/:id'} exact component={Item} />*/}
       </div>
     );
   }

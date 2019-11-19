@@ -24,6 +24,8 @@ class CreateItem extends Component {
     };
 
     render (){
+        console.log('create post state' + this.state);
+        console.log('create post props' + this.props)
         return (
             <div className="CreateItem">
                 <div>Add  item </div>

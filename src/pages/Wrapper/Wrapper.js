@@ -21,7 +21,9 @@ class Wrapper extends Component {
                                     <NavLink to="/" exact >Home</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/admin'>Admin</NavLink>
+                                    <NavLink to={{
+                                        pathname: '/admin'
+                                    }}>Admin</NavLink>
                                 </li>
                             </ul>
                         </nav>
@@ -29,7 +31,7 @@ class Wrapper extends Component {
 
                 <Route path="/" exact component={Main} />
                 <Route path="/admin"  component={Admin} />
-                <Route path="/:id" exact component={Item} />
+
 
             </div>
         )
