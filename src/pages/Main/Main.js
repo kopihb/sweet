@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './Main.scss';
-//import { Link, Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
 import Item from './../../components/Item/Item'
@@ -49,17 +49,17 @@ class Main extends Component {
     }
 
     itemSelectedHandler = (id) => {
-       // console.log(id);
+        console.log(id);
       //  console.log('main state' +this.state)
       //  console.log('main props' +this.props)
-        this.setState({ sweetItemSelected: id })
-        //console.log('main state' +this.state)
+         this.setState({ sweetItemSelected: id });
+         console.log(this.state);
        // console.log('main props' +this.props)
-        this.props.history.push( '/' + id );
+        this.props.history.push( '/items/' + id );
     }
 
   render() {
-
+      console.log(this.state)
       const sweets = this.state.sweets.map((sweet) => {
           return (
               <SweetItem
@@ -84,13 +84,14 @@ class Main extends Component {
           </div>
 
           <div>
-              <Item id={this.state.sweetItemSelected} />
+             {/*// <Item id={this.state.sweetItemSelected} />*/}
           </div>
           {/*<Route path="/:id" exact component={Item} />*/}
-         {/*// <Route path={this.state.match.url + '/:id'} exact component={Item} />*/}
+          {/*<Route path={this.state.match.url + '/:id'}  />*/}
+          <Route path={this.props.match.url + '/:id'}  component={Item}  />
       </div>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);

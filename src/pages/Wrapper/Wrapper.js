@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Wrapper.scss';
 
-import { Route, NavLink} from 'react-router-dom';
+import { Route, NavLink, Switch} from 'react-router-dom';
 
 import Admin  from '../Admin/Admin';
 import Main from '../Main/Main';
-import Item from "../../components/Item/Item";
+//import Item from "../../components/Item/Item";
 
 
 
@@ -28,9 +28,11 @@ class Wrapper extends Component {
                             </ul>
                         </nav>
                     </header>
+                <Switch>
+                    <Route path="/" exact component={Main} />
+                    <Route path="/admin"  component={Admin} />
+                </Switch>
 
-                <Route path="/" exact component={Main} />
-                <Route path="/admin"  component={Admin} />
 
 
 
