@@ -59,7 +59,7 @@ class Main extends Component {
     }
 
   render() {
-      console.log(this.state)
+     // console.log(this.state)
       const sweets = this.state.sweets.map((sweet) => {
           return (
 
