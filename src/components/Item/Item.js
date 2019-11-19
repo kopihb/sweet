@@ -12,7 +12,8 @@ class Item extends Component {
     }
 
    componentDidMount () {
-            console.log('my item' + this.props)
+            console.log('my item');
+            console.log(this.props);
            if (this.props.id) {
                if (!this.state.loadedItem ||  (this.state.loadedItem && this.state.loadedItem.id) !== this.props.id) {
                    axios.get('https://jsonplaceholder.typicode.com/posts/' + this.props.id)
@@ -38,7 +39,7 @@ class Item extends Component {
     }
 
     render () {
-        console.log('my item render' + this.props)
+       // console.log('my item render' + JSON.stringify(this.props))
         let item = <div> No item selected </div>
         if (this.props) {
             item = <p> Loading ...</p>

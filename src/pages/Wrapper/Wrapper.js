@@ -33,6 +33,7 @@ class Wrapper extends Component {
                 <Route path="/admin"  component={Admin} />
 
 
+
             </div>
         )
     }

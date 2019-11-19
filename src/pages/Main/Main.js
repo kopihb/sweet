@@ -1,7 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 
 import './Main.scss';
-import { Link, Route } from 'react-router-dom';
+//import { Link, Route } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
 import Item from './../../components/Item/Item'
@@ -17,7 +17,7 @@ import Item from './../../components/Item/Item'
 
 import { sweetsdata } from './../../data/Data.js';
 
-import axios from 'axios';
+//import axios from 'axios';
 
 class Main extends Component {
 
@@ -27,34 +27,35 @@ class Main extends Component {
         posts:  []
     };
 
-    // componentDidMount () {
-    //     console.log('my main' + this.props)
-    //     axios.get('/posts')
-    //         .then(response => {
-    //           const posts = response.data.slice(0, 2)
-    //           const updatedPosts = posts.map(post => {
-    //              return {
-    //                  ...post,
-    //                  price: 777
-    //              }
-    //           })
-    //           this.setState({posts: updatedPosts});
-    //            // console.log(this.state.posts)
-    //         })
-    //     .catch( error => {
-    //         console.log(error)
-    //     })
-    //
-    // }
+    componentDidMount () {
+        console.log('main page');
+        console.log(this.props);
+        // axios.get('/posts')
+        //     .then(response => {
+        //       const posts = response.data.slice(0, 2)
+        //       const updatedPosts = posts.map(post => {
+        //          return {
+        //              ...post,
+        //              price: 777
+        //          }
+        //       })
+        //       this.setState({posts: updatedPosts});
+        //        // console.log(this.state.posts)
+        //     })
+        // .catch( error => {
+        //     console.log(error)
+        // })
+
+    }
 
     itemSelectedHandler = (id) => {
-        console.log(id);
+       // console.log(id);
       //  console.log('main state' +this.state)
       //  console.log('main props' +this.props)
         this.setState({ sweetItemSelected: id })
         //console.log('main state' +this.state)
        // console.log('main props' +this.props)
-        //this.props.history.push( '/' + id );
+        this.props.history.push( '/' + id );
     }
 
   render() {
@@ -83,9 +84,9 @@ class Main extends Component {
           </div>
 
           <div>
-              {/*<Item id={this.state.sweetItemSelected} />*/}
+              <Item id={this.state.sweetItemSelected} />
           </div>
-          <Route path="/:id" exact component={Item} />
+          {/*<Route path="/:id" exact component={Item} />*/}
          {/*// <Route path={this.state.match.url + '/:id'} exact component={Item} />*/}
       </div>
     );

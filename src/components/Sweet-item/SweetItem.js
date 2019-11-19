@@ -5,7 +5,8 @@ import { withRouter } from 'react-router-dom';
 import './SweetItem.css';
 
 const sweetItem = (props) => {
-    console.log('sweet props' + props)
+    // console.log('sweet props' )
+    // console.log(props )
     return (
 
         <div className="SweetItem">
