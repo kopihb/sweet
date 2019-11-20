@@ -2,7 +2,7 @@ import React from 'react';
 import TextClamp from 'react-text-clamp';
 //import { withRouter } from 'react-router-dom';
 
-import './SweetItem.css';
+import './SweetItem.scss';
 
 const sweetItem = (props) => {
     // console.log('sweet props' )
