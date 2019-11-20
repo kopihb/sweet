@@ -122,40 +122,47 @@ class Item extends Component {
         }
     };
 
+
+
+// NEED  for  sever data
+    //
+    // componentDidMount () {
+    //     console.log(this.props);
+    //     this.loadData();
+    // }
+    //
+    // componentDidUpdate() {
+    //     this.loadData();
+    // }
+    //
+    // loadData () {
+    //     if ( this.props.match.params.id ) {
+    //         if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id) ) {
+    //             axios.get( '/posts/' + this.props.match.params.id )
+    //                 .then( response => {
+    //                     // console.log(response);
+    //                     this.setState( { loadedPost: response.data } );
+    //                 } );
+    //         }
+    //     }
+    // }
+    //
+    // deletePostHandler = () => {
+    //     axios.delete('/posts/' + this.props.match.params.id)
+    //         .then(response => {
+    //             console.log(response);
+    //         });
+    // }
+    //
+
+
     render () {
 
         let item = <div> No item selected </div>
         if (this.props) {
             item = <p> Loading ...</p>
         }
-        // if (this.state.loadedItem) {
-        //     item = (
-        //         <div className="SweetItem">
-        //             <div className="sweet-logo">
-        //                 <img src={props.url} alt={props.name}/>
-        //             </div>
-        //             <div className="sweet-name">
-        //                 <h3><i>"{this.state.loadedItem.name}"</i></h3>
-        //             </div>
-        //             <div className="sweet-description">
-        //                 <TextClamp fontSize={16} maxLines={3} rgbBgColor={'rgb(255,255,255)'} className="line-clamp">
-        //                     {/*{props.description}*/}
-        //                 </TextClamp>
-        //             </div>
-        //
-        //             <div className="sweet-price">
-        //                 <i>Ціна: </i>
-        //                 {/*{props.price} грн/кг*/}
-        //             </div>
-        //             <div className="sweet-price">
-        //                 <i>ID: </i>
-        //                 {this.props.id} грн/кг
-        //                 {this.state.loadedItem.id} грн/кг
-        //             </div>
-        //             <div className="sweet-delete" onClick={() => this.onDeleteItemHandler(this.props.id)}>Delete</div>
-        //         </div>
-        //     );
-        // }
+
 
         if (this.props.match.params.id) {
             let needItem = this.state.sweets.find(need => need.id === +this.props.match.params.id);
