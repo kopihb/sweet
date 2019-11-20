@@ -1,10 +1,14 @@
 import React from 'react';
 import TextClamp from 'react-text-clamp';
+//import { withRouter } from 'react-router-dom';
 
 import './SweetItem.css';
 
 const sweetItem = (props) => {
+    // console.log('sweet props' )
+    // console.log(props )
     return (
+
         <div className="SweetItem">
             <div className="sweet-logo">
                 <img src={props.url} alt={props.name}/>
@@ -22,7 +26,7 @@ const sweetItem = (props) => {
                 <i>Ціна: </i>
                 {props.price} грн/кг
             </div>
-            <button className="button-detail">Детальніше</button>
+            <button className="button-detail" onClick={props.clicked}>Детальніше</button>
         </div>
 
     )
