@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import './Admin.scss';
 import CreateItem from "../../components/CreateItem/CreateItem";
+import Main from "../Main/Main";
 
 class Admin extends Component {
     render (){
@@ -19,12 +20,19 @@ class Admin extends Component {
                                 <li>
                                     <Link to='/admin/create-post'>Create new post</Link>
                                 </li>
+                                <li>
+                                    <Link to='/admin/all-posts'>All posts</Link>
+                                </li>
                             </ul>
                         </nav>
                     </header>
                 </div>
                 <div className="item-block">
-                    <Route path="/admin/create-post" component={CreateItem} />
+                    <Switch>
+                        <Route path="/admin/create-post" component={CreateItem} />
+                        <Route path="/admin/all-posts"  component={Main} />
+                    </Switch>
+
                 </div>
                 </div>
 

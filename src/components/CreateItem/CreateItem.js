@@ -24,11 +24,9 @@ class CreateItem extends Component {
     };
 
     render (){
-        // console.log('create post state' + this.state);
-        // console.log('create post props' + this.props)
         return (
             <div className="CreateItem">
-                <div>Add  item </div>
+                <div className="header">Add  item </div>
                 <div className="inputItem">
                     <label > Title</label>
                     <input  type="text" value={this.state.title} onChange={(event) => {this.setState({title: event.target.value})}}/> <br/>
@@ -44,9 +42,11 @@ class CreateItem extends Component {
                 </div>
 
 
+                <div className="inputItemButton">
+                    <button onClick={this.createItemHandler}> Create Item </button>
+                </div>
 
 
-                <button onClick={this.createItemHandler}> Create Item </button>
             </div>
 
         )
