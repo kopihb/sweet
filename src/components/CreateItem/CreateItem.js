@@ -1,74 +1,113 @@
 import  React, { Component } from 'react';
 import  './CreateItem.scss';
 import { Formik } from 'formik';
+import  * as Yup from 'yup';
+import Error from '../Error/Error';
+
 
 import axios from 'axios';
 
-class CreateItem extends Component {
-    state = {
-        title: '',
-        content: '',
-        price: ''
-    }
+export  default function CreateItem ()  {
 
-    createItemHandler = () => {
-        const data = {
-            title: this.state.title,
-            body: this.state.content,
-            author: this.state.price
-        };
-        axios.post('https://jsonplaceholder.typicode.com/posts', data)
-            .then( response => {
-                console.log(response)
-            } )
 
-    };
 
-    render (){
+    // createItemHandler = () => {
+    //     const data = {
+    //         title: this.state.title,
+    //         body: this.state.content,
+    //         author: this.state.price
+    //     };
+    //     axios.post('https://jsonplaceholder.typicode.com/posts', data)
+    //         .then( response => {
+    //             console.log(response)
+    //         } )
+    //
+    // };
+    const validationSchema = Yup.object().shape({
+        title: Yup.string()
+            .min(1, "must have a character")
+            .max(5, "must be  shorter")
+            .required("must  enter title"),
+        content: Yup.string()
+            .min(1, "must have a character")
+            .max(5, "must be  shorter")
+            .required("must  enter content"),
+        price: Yup.number()
+            .min(1, "must have a price")
+            .max(5, "price must be  shorter")
+            .required("must  enter price"),
+    });
+
+
+
         return (
 
-            <Formik initialValues={{title: " ", content: "", price: ""}}>
-                {({values, handleChange, handleBlur}) => (
-                    <form>
-                        {JSON.stringify(values)}
+            <Formik
+                initialValues={{title: " ", content: "", price: ""}}
+                validationSchema={validationSchema}
+                onSubmit={(values, {setSubmitting, resetForm}) => {
+                    setSubmitting(true);
+                    alert(JSON.stringify(values, null, 3))
+                    resetForm();
+                }}
+            >
+                {({
+                      values,
+                      handleChange,
+                      handleBlur,
+                      errors,
+                      touched,
+                      createItemHandler,
+                      isHandled
+
+                  }) => (
+                    <form onSubmit={createItemHandler}>
+                        {/*{JSON.stringify(values)}*/}
                         <div className="input-row">
-                            <label htmlFor="title"> Title</label>
+                            <label> Title</label>
                             <input
                                 type="text"
                                 name="title"
-                                id="title"
                                 placeholder="Enter title"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.title}
+                                className={touched.title && errors.title ? "has-error" : null}
                             />
+                            <Error touced={touched.title}  message={errors.title} />
                         </div>
                         <div className="input-row">
-                            <label htmlFor="content"> content</label>
+                            <label> content</label>
                             <input
                                 type="text"
                                 name="content"
-                                id="content"
                                 placeholder="Enter content"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.content}
+                                className={touched.content && errors.content ? "has-error" : null}
                             />
+                            <Error touced={touched.content}  message={errors.content} />
                         </div>
                         <div className="input-row">
-                            <label htmlFor="content"> content</label>
+                            <label> content</label>
                             <input
                                 type="number"
                                 name="price"
-                                id="price"
                                 placeholder="Enter price"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.price}
+                                className={touched.price && errors.price ? "has-error" : null}
                             />
+                            <Error touced={touched.price}  message={errors.price} />
+
+                        </div>
+                        <div className="input-row">
+                            <button type="submit" disabled={isHandled}>Create</button>
                         </div>
                     </form>
-                    )}
+                )}
 
             </Formik>
 
@@ -78,32 +117,145 @@ class CreateItem extends Component {
 
 
         );
-    }
+
 }
 
-export default CreateItem;
 
 
 
-{/*<div className="CreateItem">*/}
-{/*<div className="header">Add  item </div>*/}
-{/*<div className="inputItem">*/}
-{/*<label > Title</label>*/}
-{/*<input  type="text" value={this.state.title} onChange={(event) => {this.setState({title: event.target.value})}}/> <br/>*/}
-{/*</div>*/}
-
-{/*<div className="inputItem">*/}
-{/*<label > Content </label>*/}
-{/*<input type="text"  value={this.state.content} onChange={(event) => {this.setState({content: event.target.value})}}/><br/>*/}
-{/*</div>*/}
-{/*<div className="inputItem">*/}
-{/*<label > Price </label>*/}
-{/*<input type="text"  value={this.state.price} onChange={(event) => {this.setState({price: event.target.value})}}/><br/>*/}
-{/*</div>*/}
 
 
-{/*<div className="inputItemButton">*/}
-{/*<button onClick={this.createItemHandler}> Create Item </button>*/}
-{/*</div>*/}
 
-{/*</div>*/}
+
+
+
+// import  React, { Component } from 'react';
+// import  './CreateItem.scss';
+// import { Formik } from 'formik';
+// import  * as Yup from 'yup';
+// import Error from '../Error/Error';
+//
+//
+// import axios from 'axios';
+//
+// class CreateItem extends Component {
+//     state = {
+//         title: '',
+//         content: '',
+//         price: ''
+//     }
+//
+//
+//
+//     createItemHandler = () => {
+//         const data = {
+//             title: this.state.title,
+//             body: this.state.content,
+//             author: this.state.price
+//         };
+//         axios.post('https://jsonplaceholder.typicode.com/posts', data)
+//             .then( response => {
+//                 console.log(response)
+//             } )
+//
+//     };
+//
+//
+//
+//     render (){
+//         const validationSchema = Yup.object().shape({
+//             title: Yup.string()
+//                 .min(1, "must have a character")
+//                 .max(255, "must be  shorter")
+//                 .required("must  enter title"),
+//             content: Yup.string()
+//                 .min(1, "must have a character")
+//                 .max(255, "must be  shorter")
+//                 .required("must  enter content"),
+//             price: Yup.number()
+//                 .min(1, "must have a price")
+//                 .max(5, "price must be  shorter")
+//                 .required("must  enter price"),
+//         });
+//         return (
+//
+//             <Formik
+//                 initialValues={{title: " ", content: "", price: ""}}
+//                 validationSchema={validationSchema}
+//                 onSubmit={(values, {setSubmitting, resetForm}) => {
+//                     setSubmitting(true);
+//                     alert(JSON.stringify(values, null, 2))
+//                     resetForm();
+//                 }}
+//             >
+//                 {({
+//                       values,
+//                       handleChange,
+//                       handleBlur,
+//                       errors,
+//                       touched,
+//                       createItemHandler,
+//                       isHandled
+//
+//                 }) => (
+//                     <form onSubmit={createItemHandler}>
+//                         {/*{JSON.stringify(values)}*/}
+//                         <div className="input-row">
+//                             <label> Title</label>
+//                             <input
+//                                 type="text"
+//                                 name="title"
+//                                 placeholder="Enter title"
+//                                 onChange={handleChange}
+//                                 onBlur={handleBlur}
+//                                 value={values.title}
+//                                 className={touched.title && errors.title ? "has-error" : null}
+//                             />
+//                             <Error touced={touched.title}  message={errors.title} />
+//                         </div>
+//                         <div className="input-row">
+//                             <label> content</label>
+//                             <input
+//                                 type="text"
+//                                 name="content"
+//                                 placeholder="Enter content"
+//                                 onChange={handleChange}
+//                                 onBlur={handleBlur}
+//                                 value={values.content}
+//                                 className={touched.content && errors.content ? "has-error" : null}
+//                             />
+//                             <Error touced={touched.content}  message={errors.content} />
+//                         </div>
+//                         <div className="input-row">
+//                             <label> content</label>
+//                             <input
+//                                 type="number"
+//                                 name="price"
+//                                 placeholder="Enter price"
+//                                 onChange={handleChange}
+//                                 onBlur={handleBlur}
+//                                 value={values.price}
+//                                 className={touched.price && errors.price ? "has-error" : null}
+//                             />
+//                             <Error touced={touched.price}  message={errors.price} />
+//
+//                         </div>
+//                         <div className="input-row">
+//                             <button type="submit" disabled={isHandled}>Create</button>
+//                         </div>
+//                     </form>
+//                     )}
+//
+//             </Formik>
+//
+//
+//
+//
+//
+//
+//         );
+//     }
+// }
+//
+// export default CreateItem;
+//
