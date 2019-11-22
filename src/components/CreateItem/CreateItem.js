@@ -1,7 +1,8 @@
 import  React, { Component } from 'react';
 import  './CreateItem.scss';
 
-import axios from 'axios';
+//import axios from 'axios';
+import  axios from '../../axios-orders';
 
 class CreateItem extends Component {
     state = {
@@ -16,11 +17,13 @@ class CreateItem extends Component {
             body: this.state.content,
             author: this.state.price
         };
-        axios.post('https://jsonplaceholder.typicode.com/posts', data)
-            .then( response => {
-                console.log(response)
-            } )
-
+        // axios.post('https://jsonplaceholder.typicode.com/posts', data)
+        //     .then( response => {
+        //         console.log(response)
+        //     } )
+        axios.post('/items.json', data)
+            .then( response => console.log(response))
+            .catch(error => console.log(error));
     };
 
     render (){
