@@ -3,27 +3,33 @@ import  './CreateItem.scss';
 
 //import axios from 'axios';
 import  axios from '../../axios-orders';
+import Spinner  from './../Spinner/Spinner';
+import Slider from "../Slider/Slider";
 
 class CreateItem extends Component {
     state = {
         title: '',
         content: '',
-        price: ''
+        price: '',
+        loading: false
     }
 
     createItemHandler = () => {
+        this.setState({loading: true});
         const data = {
             title: this.state.title,
             body: this.state.content,
             author: this.state.price
         };
-        // axios.post('https://jsonplaceholder.typicode.com/posts', data)
-        //     .then( response => {
-        //         console.log(response)
-        //     } )
         axios.post('/items.json', data)
-            .then( response => console.log(response))
-            .catch(error => console.log(error));
+            .then( response => {
+                console.log(response)
+                this.setState({loading: false});
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({loading: false})
+            });
     };
 
     render (){
@@ -48,6 +54,8 @@ class CreateItem extends Component {
                 <div className="inputItemButton">
                     <button onClick={this.createItemHandler}> Create Item </button>
                 </div>
+
+                {this.state.loading && <Spinner />}
 
 
             </div>
