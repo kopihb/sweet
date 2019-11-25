@@ -19,32 +19,53 @@ import { sweetsdata } from './../../data/Data.js';
 
 //import axios from 'axios';
 
-class Main extends Component {
+import axios from '../../axios-orders';
 
+class Main extends Component {
+constructor(props) {
+    super(props);
+    this.loadData();
+    // console.log('my state post')
+    // console.log(this.state.post)
+    // console.log('my state sweet')
+     console.log(this.state.sweets)
+}
     state ={
-        sweets : sweetsdata["sweets "],
-        sweetItemSelected: null,
+        sweets2 : sweetsdata["sweets "],
+         sweets : [],
+         sweetItemSelected: null,
+        itemsLoaded: false,
         posts:  []
     };
 
+
     componentDidMount () {
-        console.log('main page');
-        console.log(this.props);
-        // axios.get('/posts')
-        //     .then(response => {
-        //       const posts = response.data.slice(0, 2)
-        //       const updatedPosts = posts.map(post => {
-        //          return {
-        //              ...post,
-        //              price: 777
-        //          }
-        //       })
-        //       this.setState({posts: updatedPosts});
-        //        // console.log(this.state.posts)
-        //     })
-        // .catch( error => {
-        //     console.log(error)
-        // })
+        this.loadData();
+        console.log("response data DIDmount sweets2");
+        console.log(this.state.sweets);
+        console.log(this.state.sweets2);
+    }
+
+    componentDidUpdate() {
+       // this.loadData();
+        console.log("response data DIDUPDTE sweets2");
+        console.log(this.state.sweets);
+        console.log(this.state.sweets2);
+    }
+
+    loadData() {
+        // if(this.state.itemsLoaded){
+            axios.get('/items.json')
+                .then(response => {
+
+                    const sweetsList = Object.values(response.data);
+                    this.setState({sweets: sweetsList});
+
+                })
+            .catch( error => {
+                console.log(error)
+            })
+        // }
 
     }
 
@@ -60,24 +81,25 @@ class Main extends Component {
 
   render() {
      // console.log(this.state)
+
+
       const sweets = this.state.sweets.map((sweet) => {
           return (
 
               <SweetItem
-              name={sweet.name}
+              name={sweet.item}
               url={sweet.url}
               description={sweet.description}
               price={sweet.price}
-              key={sweet.id}
+              //key={sweet.id}
               clicked={()=> this.itemSelectedHandler(sweet.id)}
           />)
       });
 
     return (
 
+
       <div className="Main">
-
-
 
           <div className="sweet-block" id="sweet">
               {sweets}
@@ -86,8 +108,6 @@ class Main extends Component {
           <div>
              {/*// <Item id={this.state.sweetItemSelected} />*/}
           </div>
-          {/*<Route path="/:id" exact component={Item} />*/}
-          {/*<Route path={this.state.match.url + '/:id'}  />*/}
           <Route path={this.props.match.url + '/:id'}  component={Item}  />
       </div>
     );

@@ -18,10 +18,11 @@ class CreateItem extends Component {
         this.setState({loading: true});
         const data = {
             title: this.state.title,
-            body: this.state.content,
-            author: this.state.price
+            content: this.state.content,
+            price: this.state.price
         };
-        axios.post('/items.json', data)
+        axios.post('/items.json',  data)
+
             .then( response => {
                 console.log(response)
                 this.setState({loading: false});
