@@ -11,6 +11,7 @@ class CreateItem extends Component {
         title: '',
         content: '',
         price: '',
+        url: '',
         loading: false
     }
 
@@ -21,7 +22,8 @@ class CreateItem extends Component {
             title: this.state.title,
             content: this.state.content,
             price: this.state.price,
-            id: idGeneratio
+            url: this.state.url,
+            //id: idGeneratio
         };
         axios.post('/items.json',  data)
 
@@ -40,13 +42,16 @@ class CreateItem extends Component {
             <div className="CreateItem">
                 <div className="header">Add  item </div>
                 <div className="inputItem">
-                    <label > Title</label>
-                    <input  type="text" value={this.state.title} onChange={(event) => {this.setState({title: event.target.value})}}/> <br/>
+                    <label > Url</label>
+                    <input  type="text" value={this.state.url} onChange={(event) => {this.setState({url: event.target.value})}}/> <br/>
                 </div>
-
                 <div className="inputItem">
                     <label > Content </label>
                     <input type="text"  value={this.state.content} onChange={(event) => {this.setState({content: event.target.value})}}/><br/>
+                </div>
+                <div className="inputItem">
+                    <label > Title</label>
+                    <input  type="text" value={this.state.title} onChange={(event) => {this.setState({title: event.target.value})}}/> <br/>
                 </div>
                 <div className="inputItem">
                     <label > Price </label>

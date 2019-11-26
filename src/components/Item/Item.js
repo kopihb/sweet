@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router-dom';
+import {withRouter, Router, Route, Switch} from 'react-router-dom';
 
 import './Item.scss';
 import TextClamp from "react-text-clamp";
 import { sweetsdata } from './../../data/Data.js';
 import axios from '../../axios-orders';
+import Main from "../../pages/Main/Main";
+import Admin from "../../pages/Admin/Admin";
 
 class Item extends Component {
 
@@ -52,7 +54,7 @@ class Item extends Component {
     }
 
     componentDidUpdate() {
-        this.loadData();
+        // this.loadData();
         console.log('item did update');
         console.log(this.state);
     }
@@ -61,23 +63,34 @@ class Item extends Component {
         if ( this.props.match.params.id ) {
             //if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== +this.props.match.params.id) ) {
 
-                axios.get( '/items.json' + this.props.match.params.id )
-                    .then( response => {
-                        console.log('responce in axios');
-                        console.log(response.data);
-                        this.setState( { loadedItem: response.data } );
-                    } );
+                axios.get( '/items/' + this.props.match.params.id + '.json')
+               // axios.get( '/items.json')
+                    .then( res => {
+                        const needItem = res.data;
+
+                        // let transformData = Object.values(response.data);
+                        console.log('responce in axios item');
+                        console.log(needItem);
+                        // let needItem = transformData.find(need => need.id === this.props.match.params.id);
+                        this.setState( { loadedItem: needItem } );
+                    } )
+                    .catch( error => {
+                        console.log(error)
+                    });
 
         }
     }
-    //
-    // deletePostHandler = () => {
-    //     axios.delete('/posts/' + this.props.match.params.id)
-    //         .then(response => {
-    //             console.log(response);
-    //         });
-    // }
-    //
+
+    deleteItemHandler = (id) => {
+        axios.delete('/items/' + id +'.json')
+            .then(response => {
+                console.log(response);
+            })
+            .catch( error => {
+                console.log(error)
+            });
+    }
+
 
 
     render () {
@@ -93,9 +106,9 @@ class Item extends Component {
 
             item = (
                 <div className="SweetItem">
-                    {/*<div className="sweet-logo">*/}
-                        {/*<img src={this.state.loadedItem.url} alt={this.state.loadedItem.name}/>*/}
-                    {/*</div>*/}
+                    <div className="sweet-logo">
+                        <img src={this.state.loadedItem.url} alt={this.state.loadedItem.name}/>
+                    </div>
                     <div className="sweet-name">
                         <h3><i>"{this.state.loadedItem.title}"</i></h3>
                     </div>
@@ -114,7 +127,9 @@ class Item extends Component {
                         {/*{needItem.id} грн/кг*/}
                         {/*{this.needItem.id} грн/кг*/}
                     </div>
-                    <div className="sweet-delete" onClick={() => this.onDeleteItemHandler(this.state.loadedItem.id)}>Delete</div>
+                    <div className="sweet-delete" onClick={() => this.deleteItemHandler(this.props.match.params.id)}>Delete</div>
+
+
                 </div>
             );
         }

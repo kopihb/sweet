@@ -56,10 +56,19 @@ constructor(props) {
     loadData() {
         // if(this.state.itemsLoaded){
             axios.get('/items.json')
-                .then(response => {
+                .then(res => {
 
-                    const sweetsList = Object.values(response.data);
-                    this.setState({sweets: sweetsList});
+                    // const sweetsList = Object.values(response.data);
+                    // this.setState({sweets: sweetsList});
+
+                    const fetchedOrders = [];
+                    for (let key in res.data) {
+                        fetchedOrders.push({
+                            ...res.data[key],
+                            id: key
+                        });
+                    }
+                    this.setState({ sweets: fetchedOrders});
 
                 })
             .catch( error => {
@@ -87,8 +96,8 @@ constructor(props) {
           return (
 
               <SweetItem
-              name={sweet.title}
-              //url={sweet.url}
+              title={sweet.title}
+              url={sweet.url}
               content={sweet.content}
               price={sweet.price}
               key={sweet.id}
@@ -99,7 +108,7 @@ constructor(props) {
     return (
 
 
-      <div className="Main">;
+      <div className="Main">
 
           <div className="sweet-block" id="sweet">
               {sweets}
