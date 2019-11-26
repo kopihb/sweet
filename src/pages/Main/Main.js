@@ -15,8 +15,8 @@ import Item from './../../components/Item/Item'
 //
 // import CreateItem from './../../components/CreateItem/CreateItem';
 
-import { sweetsdata } from './../../data/Data.js';
-
+// import { sweetsdata } from './../../data/Data.js';
+//
 //import axios from 'axios';
 
 import axios from '../../axios-orders';
@@ -28,10 +28,10 @@ constructor(props) {
     // console.log('my state post')
     // console.log(this.state.post)
     // console.log('my state sweet')
-     console.log(this.state.sweets)
+     //console.log(this.state.sweets)
 }
     state ={
-        sweets2 : sweetsdata["sweets "],
+        //sweets2 : sweetsdata["sweets "],
          sweets : [],
          sweetItemSelected: null,
         itemsLoaded: false,
@@ -41,16 +41,16 @@ constructor(props) {
 
     componentDidMount () {
         this.loadData();
-        console.log("response data DIDmount sweets2");
-        console.log(this.state.sweets);
-        console.log(this.state.sweets2);
+        // console.log("response data DIDmount sweets2");
+        // console.log(this.state.sweets);
+        // console.log(this.state.sweets2);
     }
 
     componentDidUpdate() {
        // this.loadData();
-        console.log("response data DIDUPDTE sweets2");
-        console.log(this.state.sweets);
-        console.log(this.state.sweets2);
+       //  console.log("response data DIDUPDTE sweets2");
+       //  console.log(this.state.sweets);
+       //  console.log(this.state.sweets2);
     }
 
     loadData() {
@@ -87,11 +87,11 @@ constructor(props) {
           return (
 
               <SweetItem
-              name={sweet.item}
-              url={sweet.url}
-              description={sweet.description}
+              name={sweet.title}
+              //url={sweet.url}
+              content={sweet.content}
               price={sweet.price}
-              //key={sweet.id}
+              key={sweet.id}
               clicked={()=> this.itemSelectedHandler(sweet.id)}
           />)
       });
@@ -99,7 +99,7 @@ constructor(props) {
     return (
 
 
-      <div className="Main">
+      <div className="Main">;
 
           <div className="sweet-block" id="sweet">
               {sweets}

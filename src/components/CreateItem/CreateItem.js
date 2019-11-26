@@ -16,10 +16,12 @@ class CreateItem extends Component {
 
     createItemHandler = () => {
         this.setState({loading: true});
+        let idGeneratio = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         const data = {
             title: this.state.title,
             content: this.state.content,
-            price: this.state.price
+            price: this.state.price,
+            id: idGeneratio
         };
         axios.post('/items.json',  data)
 

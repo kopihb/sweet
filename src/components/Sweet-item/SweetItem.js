@@ -14,11 +14,11 @@ const sweetItem = (props) => {
                 <img src={props.url} alt={props.name}/>
             </div>
             <div className="sweet-name">
-                <h3><i>"{props.item}"</i></h3>
+                <h3><i>"{props.title}"</i></h3>
             </div>
             <div className="sweet-description">
                 <TextClamp fontSize={16} maxLines={3} rgbBgColor={'rgb(255,255,255)'} className="line-clamp">
-                    {props.description}
+                    {props.content}
                 </TextClamp>
             </div>
 
