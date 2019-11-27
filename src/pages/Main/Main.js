@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import './Main.scss';
-import { Route, withRouter, Link } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 import SweetItem from './../../components/Sweet-item/SweetItem';
 import Item from './../../components/Item/Item'
@@ -39,27 +39,20 @@ constructor(props) {
     };
 
 
-    componentDidMount () {
+    componentWillMount () {
         this.loadData();
-        // console.log("response data DIDmount sweets2");
-        // console.log(this.state.sweets);
-        // console.log(this.state.sweets2);
     }
 
-    componentDidUpdate() {
-       // this.loadData();
-       //  console.log("response data DIDUPDTE sweets2");
-       //  console.log(this.state.sweets);
-       //  console.log(this.state.sweets2);
-    }
+
+
+
 
     loadData() {
-        // if(this.state.itemsLoaded){
+
             axios.get('/items.json')
                 .then(res => {
 
                     // const sweetsList = Object.values(response.data);
-                    // this.setState({sweets: sweetsList});
 
                     const fetchedOrders = [];
                     for (let key in res.data) {
@@ -80,18 +73,10 @@ constructor(props) {
 
     itemSelectedHandler = (id) => {
         console.log(id);
-      //  console.log('main state' +this.state)
-      //  console.log('main props' +this.props)
-      //    this.setState({ sweetItemSelected: id });
-      //    console.log(this.state);
-       // console.log('main props' +this.props)
         this.props.history.push( '/items/' + id );
     }
 
   render() {
-     // console.log(this.state)
-
-
       const sweets = this.state.sweets.map((sweet) => {
           return (
 
@@ -111,13 +96,10 @@ constructor(props) {
       <div className="Main">
 
           <div className="sweet-block" id="sweet">
-              {sweets}
+                  {sweets}
+              <Route path={this.props.match.url + '/:id'}   component={Item}  />
           </div>
 
-          <div>
-             {/*// <Item id={this.state.sweetItemSelected} />*/}
-          </div>
-          <Route path={this.props.match.url + '/:id'}  component={Item}  />
       </div>
     );
   }

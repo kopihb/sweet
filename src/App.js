@@ -7,6 +7,7 @@ import Wrapper from "./pages/Wrapper/Wrapper";
 class App extends Component {
     render (){
         return (
+           // <BrowserRouter basename="/">   for deploy
             <BrowserRouter>
                 <Wrapper />
             </BrowserRouter>

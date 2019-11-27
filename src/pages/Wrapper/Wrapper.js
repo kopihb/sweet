@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Wrapper.scss';
 
-import { Route, NavLink, Switch} from 'react-router-dom';
+import { Route, NavLink, Switch, Redirect} from 'react-router-dom';
 
 import Admin  from '../Admin/Admin';
 import Main from '../Main/Main';
@@ -29,9 +29,10 @@ class Wrapper extends Component {
                         </nav>
                     </header>
                 <Switch>
-                    <Route path="/" exact component={Main} />
+                    <Route path="/items" exact component={Main} />
                     <Route path="/items/:id" exact component={Item} />
                     <Route path="/admin"  component={Admin} />
+                    <Redirect from="/" to="/items" />
                 </Switch>
 
 

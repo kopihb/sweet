@@ -4,7 +4,7 @@ import  './CreateItem.scss';
 //import axios from 'axios';
 import  axios from '../../axios-orders';
 import Spinner  from './../Spinner/Spinner';
-import Slider from "../Slider/Slider";
+//import Slider from "../Slider/Slider";
 
 class CreateItem extends Component {
     state = {
@@ -17,7 +17,7 @@ class CreateItem extends Component {
 
     createItemHandler = () => {
         this.setState({loading: true});
-        let idGeneratio = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        //let idGeneratio = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         const data = {
             title: this.state.title,
             content: this.state.content,
