@@ -17,9 +17,9 @@ const sweetItem = (props) => {
                 <h3><i>"{props.title}"</i></h3>
             </div>
             <div className="sweet-description">
-                <TextClamp fontSize={16} maxLines={3} rgbBgColor={'rgb(255,255,255)'} className="line-clamp">
+                {/*<TextClamp fontSize={16} maxLines={3} rgbBgColor={'rgb(255,255,255)'} className="line-clamp">*/}
                     {props.content}
-                </TextClamp>
+                {/*</TextClamp>*/}
             </div>
 
             <div className="sweet-price">

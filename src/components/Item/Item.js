@@ -116,11 +116,11 @@ class Item extends Component {
                 <div className="sweet-name">
                     <h3><i>"{this.state.loadedItem.title}"</i></h3>
                 </div>
-                {/*<div className="sweet-description">*/}
+                <div className="sweet-description">
                     {/*<TextClamp fontSize={16} maxLines={3} rgbBgColor={'rgb(255,255,255)'} className="line-clamp">*/}
-                        {/*{this.state.loadedItem.content}*/}
+                        {this.state.loadedItem.content}
                     {/*</TextClamp>*/}
-                {/*</div>*/}
+                </div>
 
                 <div className="sweet-price">
                     <i>Ціна: </i>

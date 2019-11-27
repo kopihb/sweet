@@ -97,9 +97,8 @@ constructor(props) {
 
           <div className="sweet-block" id="sweet">
                   {sweets}
-              <Route path={this.props.match.url + '/:id'}   component={Item}  />
           </div>
-
+          <Route path={this.props.match.url + '/:id'}   component={Item}  />
       </div>
     );
   }
