@@ -7,7 +7,7 @@ import TextClamp from "react-text-clamp";
 import axios from '../../axios-orders';
 // import Main from "../../pages/Main/Main";
 // import Admin from "../../pages/Admin/Admin";
-// import {Redirect, Route, Switch} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 class Item extends Component {
 
@@ -19,18 +19,29 @@ class Item extends Component {
 
 
 
-// NEED  for  sever data
-    //
     componentDidMount () {
-        this.loadData();
+        // this.loadData();
         console.log('item did mount');
         console.log(this.state);
         console.log(this.props);
+        //this.returningBack();
+
     }
 
-    componentWillUnmount () {
-        this.state.deleted = true;
+    componentWillMount (){
+        //this.returningBack();
+        this.loadData();
     }
+
+
+
+
+    renderRedirect = () => {
+        if (this.state.deleted) {
+            return <Redirect to='/items' />
+        }
+    }
+
 
     loadData () {
         if ( this.props.match.params.id ) {
@@ -47,6 +58,8 @@ class Item extends Component {
                         console.log(needItem);
                         // let needItem = transformData.find(need => need.id === this.props.match.params.id);
                         this.setState( { loadedItem: needItem } );
+
+
                     } )
                     .catch( error => {
                         console.log(error)
@@ -59,13 +72,18 @@ class Item extends Component {
         axios.delete('/items/' + id +'.json')
             .then(response => {
                 console.log(response);
+                // if(response) {
+                //     this.returningBack();
+                // }
+
                 this.setState( { deleted: true } );
+                console.log("ater delete")
+                console.log(this.state)
             })
             .catch( error => {
                 console.log(error)
             });
     }
-
 
 
     render () {
@@ -74,6 +92,7 @@ class Item extends Component {
         if (this.props) {
             item = <p> Loading ...</p>
         }
+
 
 
        // if (this.props.match.params.id) {
@@ -109,7 +128,11 @@ class Item extends Component {
         //return (<Fragment>{item}</Fragment>)
        // return  <div> {item}</div>
         return  (
+
+
+
             <div className="SweetItem">
+                {this.renderRedirect()}
                 <div className="sweet-logo">
                     <img src={this.state.loadedItem.url} alt={this.state.loadedItem.name}/>
                 </div>
